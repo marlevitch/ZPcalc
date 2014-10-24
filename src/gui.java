@@ -1,112 +1,112 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.math.BigDecimal;
+import javax.swing.*;							// Импорт библиотеки Swing
+import java.awt.*;								// Импорт библиотеки AWT
+import java.awt.event.*;						// Импорт библиотеки AWT.Event
+import java.math.BigDecimal;					// Импорт библиотеки Math
 
-public class gui extends JFrame{
-	JButton b1, b2;
-	JLabel l1, l2, l3, l4, l5, l6;
-	JTextField t1, t2, t3, t4;
-	Float i, k, l, m, n, p;
-	String a, b;
-	eHandler handler = new eHandler();
+public class gui extends JFrame{				// Наследовать все методы класса JFrame
+	JButton b1, b2;								// Объявление b1, b2 кнопками
+	JLabel l1, l2, l3, l4, l5, l6;				// Объявление l1, l2, l3, l4, l5, l6 лейблами
+	JTextField t1, t2, t3, t4;					// Объявление t1, t2, t3, t4 текстовыми полями
+	Float i, k, l, m, n, p;						// Объявление переменных i, k, l, m, n, p как чисел с плавающей запятой
+	String a, b;								// Объявление строковых переменных a, b
+	eHandler handler = new eHandler();			// Объявление хендлера
 	
-	public gui (String s) {
-		super (s);
+	public gui (String s) {						// Создание конструктора gui
+		super (s);								// Обращение к суперклассу
 
-		l1 = new JLabel ("Ставка, рублей/час ");
-		t1 = new JTextField (10);
-		l2 = new JLabel ("Премия, % ");
-		t2 = new JTextField (10);
-		l3 = new JLabel ("Отработано, часов ");
-		t3 = new JTextField (10);
-		l4 = new JLabel ("Сверхурочно, часов ");
-		t4 = new JTextField (10);
-		b1 = new JButton ("Рассчитать");
-		b2 = new JButton ("Очистить");
-		l5 = new JLabel ("");
-		l6= new JLabel ("");
+		l1 = new JLabel ("Ставка, рублей/час ");	// Определение лейбла и его наименования
+		t1 = new JTextField (10);					// Определение текстового поля и его наименования
+		l2 = new JLabel ("Премия, % ");				// Определение лейбла и его наименования
+		t2 = new JTextField (10);					// Определение текстового поля и его наименования
+		l3 = new JLabel ("Отработано, часов ");		// Определение лейбла и его наименования
+		t3 = new JTextField (10);					// Определение текстового поля и его наименования
+		l4 = new JLabel ("Сверхурочно, часов ");	// Определение лейбла и его наименования
+		t4 = new JTextField (10);					// Определение текстового поля и его наименования
+		b1 = new JButton ("Рассчитать");			// Определение кнопки и её наименования
+		b2 = new JButton ("Очистить");				// Определение кнопки и её наименования
+		l5 = new JLabel ("");						// Определение лейбла и его наименования
+		l6= new JLabel ("");						// Определение лейбла и его наименования
 		
-		add(l1);
-		l1.setLocation(10, 10);
-		l1.setSize(170, 40);
-		add(t1);
-		t1.setLocation(190, 10);
-		t1.setSize(170, 40);
-		add(l2);
-		l2.setLocation(10, 60);
-		l2.setSize(170, 40);
-		add(t2);
-		t2.setLocation(190, 60);
-		t2.setSize(170, 40);
-		add(l3);
-		l3.setLocation(10, 110);
-		l3.setSize(170, 40);
-		add(t3);
-		t3.setLocation(190, 110);
-		t3.setSize(170, 40);
-		add(l4);
-		l4.setLocation(10, 160);
-		l4.setSize(170, 40);
-		add(t4);
-		t4.setLocation(190, 160);
-		t4.setSize(170, 40);
-		add(b1);
-		b1.setLocation(10, 210);
-		b1.setSize(170, 40);
-		add(b2);
-		b2.setLocation(190, 210);
-		b2.setSize(170, 40);
-		add(l5);
-		l5.setLocation(10, 260);
-		l5.setSize(360, 40);
-		b1.addActionListener(handler);
-		b2.addActionListener(handler);
-		add(l6);
-		l6.setLocation(30, 30);
-		l6.setSize(170, 40);
-		setVisible(true);
+		add(l1);						// Добавить лейбл на форму
+		l1.setLocation(10, 10);			// Задать расположение на форме
+		l1.setSize(170, 40);			// Задать размер
+		add(t1);						// Добавить текстовое поле на форму
+		t1.setLocation(190, 10);		// Задать расположение на форме
+		t1.setSize(170, 40);			// Задать размер
+		add(l2);						// Добавить лейбл на форму
+		l2.setLocation(10, 60);			// Задать расположение на форме
+		l2.setSize(170, 40);			// Задать размер
+		add(t2);						// Добавить текстовое поле на форму
+		t2.setLocation(190, 60);		// Задать расположение на форме
+		t2.setSize(170, 40);			// Задать размер
+		add(l3);						// Добавить лейбл на форму
+		l3.setLocation(10, 110);		// Задать расположение на форме
+		l3.setSize(170, 40);			// Задать размер
+		add(t3);						// Добавить текстовое поле на форму
+		t3.setLocation(190, 110);		// Задать расположение на форме
+		t3.setSize(170, 40);			// Задать размер
+		add(l4);						// Добавить лейбл на форму
+		l4.setLocation(10, 160);		// Задать расположение на форме
+		l4.setSize(170, 40);			// Задать размер
+		add(t4);						// Добавить текстовое поле на форму
+		t4.setLocation(190, 160);		// Задать расположение на форме
+		t4.setSize(170, 40);			// Задать размер
+		add(b1);						// Добавить кнопку на форму
+		b1.setLocation(10, 210);		// Задать расположение на форме
+		b1.setSize(170, 40);			// Задать размер
+		add(b2);						// Добавить кнопку на форму
+		b2.setLocation(190, 210);		// Задать расположение на форме
+		b2.setSize(170, 40);			// Задать размер
+		add(l5);						// Добавить лейбл на форму
+		l5.setLocation(10, 260);		// Задать расположение на форме
+		l5.setSize(360, 40);			// Задать размер
+		b1.addActionListener(handler);	// Отслеживать нажатия кнопки
+		b2.addActionListener(handler);	// Отслеживать нажатия кнопки
+		add(l6);						// Добавить лейбл на форму
+		l6.setLocation(30, 30);			// Задать расположение на форме
+		l6.setSize(170, 40);			// Задать размер
+		setVisible(true);				// Задать видимость объектов
 		}
 
-	public class eHandler implements ActionListener{
-		public void actionPerformed(ActionEvent e){
-			try{
-				if(e.getSource()==b1){
-
-					k = Float.parseFloat(t1.getText());
-					l = Float.parseFloat(t2.getText());
-					m = Float.parseFloat(t3.getText());
-					n = Float.parseFloat(t4.getText());
+	public class eHandler implements ActionListener{		// Создать класс и наследовать все методы класса ActionListener
+		public void actionPerformed(ActionEvent e){			// Заимствовать метод actionPerformed из суперкласса
+			try{											// Попробовать выполнить
+				if(e.getSource()==b1){						// Если нажата кнопка 1
 							
-					if((k>=0)&(l>=0)&(m>=0)&(n>=0)){
+					k = Float.parseFloat(t1.getText());		// Преобразовать строковое значение в число с плавающей запятой
+					l = Float.parseFloat(t2.getText());		// Преобразовать строковое значение в число с плавающей запятой
+					m = Float.parseFloat(t3.getText());		// Преобразовать строковое значение в число с плавающей запятой
+					n = Float.parseFloat(t4.getText());		// Преобразовать строковое значение в число с плавающей запятой
+									
+					if((k>=0)&(l>=0)&(m>=0)&(n>=0)){				// Если исходные данные неотрицательны, то
 						
-						i = (k * (m + 2 * n)) * ( 1 + l / 100);
+						i = (k * (m + 2 * n)) * ( 1 + l / 100);		// Расчёт зарплаты
 					
-						BigDecimal p = new BigDecimal(i);
-						p = p.setScale(2, BigDecimal.ROUND_HALF_UP);
+						BigDecimal p = new BigDecimal(i);			// Создание метода BigDecimal
+						p = p.setScale(2, BigDecimal.ROUND_HALF_UP);// Округление до двух знаков после запятой
 
-						a = "В этом месяце зарплата составляет " + p + " рублей";
+						a = "В этом месяце зарплата составляет " + p + " рублей";		//Подготовка к выводу результата
 
-						l5.setText(a);
-						l6.setText("");
+						l5.setText(a);							// Вывод результата пользователю
+						l6.setText("");							//
 						}
-					else{
-						a = "Исходные данные некорректны";
-						l5.setText(a);
-						l6.setText("");
+					else{										// При отрицательном значении 
+						a = "Исходные данные некорректны";		// Подготовить сообщение к выводу
+						l5.setText(a);							// Вывести сообщение пользователю
+						l6.setText("");							//
 						}
 					}
-					if(e.getSource()==b2){
-						t1.setText(null);
-						t2.setText(null);
-						t3.setText(null);
-						t4.setText(null);
-						l5.setText("");
+					if(e.getSource()==b2){						// Если нажата кнопка 2
+						t1.setText(null);						// Очистить текстовое поле
+						t2.setText(null);						// Очистить текстовое поле
+						t3.setText(null);						// Очистить текстовое поле
+						t4.setText(null);						// Очистить текстовое поле
+						l5.setText("");							// Очистить результат
 						}
-				} catch (Exception ex){
-					a = "Исходные данные некорректны";
-					l5.setText(a);
-					l6.setText("");
+				} catch (Exception ex){							// При некорректном вводе
+					a = "Исходные данные некорректны";			// Подготовить сообщение к выводу
+					l5.setText(a);								// Вывести сообщение
+					l6.setText("");								//
 				}
 			}
 		}
