@@ -1,12 +1,13 @@
 import javax.swing.*;						
 import java.awt.*;								
 import java.awt.event.*;				
+import java.math.BigDecimal;					
 
 public class gui extends JFrame{				
 	JButton b1, b2;								
 	JLabel l1, l2, l3, l4, l5, l6;				
 	JTextField t1, t2, t3, t4;				
-	Float i, k, l, m, n;						
+	Float i, k, l, m, n, p;						
 	String a, b;							
 	eHandler handler = new eHandler();			
 	
@@ -79,7 +80,10 @@ public class gui extends JFrame{
 									
 						i = (k * (m + 2 * n)) * ( 1 + l / 100);		
 					
-						a = "В этом месяце зарплата составляет " + i + " рублей";	
+						BigDecimal p = new BigDecimal(i);			
+						p = p.setScale(2, BigDecimal.ROUND_HALF_UP);
+
+						a = "В этом месяце зарплата составляет " + p + " рублей";	
 
 						l5.setText(a);							
 						l6.setText("");							
